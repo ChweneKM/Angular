@@ -1,0 +1,14 @@
+<h1>Home</h1>
+<div *ngIf = "users"> 
+<ul class="user">
+  <li *ngFor="let user of users"
+    (click)="onSelect(user)">
+    <p>{{user.firstName}} {{user.id}}</p>
+  </li>
+
+</ul>
+</div>
+ <div>
+
+
+ </div>

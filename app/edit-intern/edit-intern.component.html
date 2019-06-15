@@ -1,0 +1,38 @@
+<div class="col-md-3">
+  <h2 class="text-center">Edit Intern</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>ID:</label>
+      <input type="text" formControlName="id" placeholder="ID" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }">
+      <div *ngIf="submitted && f.id.errors">
+        <div *ngIf="f.id.errors.required">ID is required</div>
+      </div>
+    </div>
+
+    <div class="form-group" [formGroup]="myGroup">
+      <label>FirstName:</label>
+      <input type="text" formControlName="firstName" placeholder="FirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+      <div *ngIf="submitted && f.firstName.errors">
+        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group" [formGroup]="myGroup">
+      <label>LastName:</label>
+      <input type="text" formControlName="lastName" placeholder="LastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+      <div *ngIf="submitted && f.lastName.errors">
+        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group" [formGroup]="myGroup">
+        <label>Bio:</label>
+        <input type="text" formControlName="bio" placeholder="Bio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bio.errors }">
+        <div *ngIf="submitted && f.bio.errors">
+          <div *ngIf="f.bio.errors.required">Bio is required</div>
+        </div>
+    </div>
+
+    <button type="submit"  class="btn btn-info">Update</button>
+  </form>
+</div>
